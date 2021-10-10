@@ -1,0 +1,145 @@
+:root {
+    --white-color:white;
+    --black-color: #222222;
+    --orange-color: #f65e39;
+    --grey-color: #555;
+    --light-grey-color: #919191;
+    --dark-border-color: #e7e7e7;
+    --border-color: #e0e0e0;
+
+
+    --header-height: 80px;
+    --main-section-margin: 40px;
+    --suggestion-height: 200px;
+    --normal-font-size: 1.4rem;
+    --heading-font-size: 1.7rem;
+    --bold-font: 500;
+}
+
+/* ------reset----------- */
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%
+}
+* , ::before, ::after {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-size: var(--normal-font-size);
+  font-weight: 400;
+  color: var(--black-color);
+}
+
+h1,h2,h3,h4,h5,h6,p,ul{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+input {
+    border: none;
+    outline: none;
+}
+button {
+    border: none;
+    background-color: unset;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+b { 
+  font-weight: bold;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* ----------CSS------------- */
+.container {
+    width: 100%;
+    display: block;
+    padding: 0 4.5rem;
+}
+
+.container-md {
+    max-width: calc(1520px + 9rem);
+}
+
+.container-sm {
+    max-width: calc(1290px + 9rem);
+}
+
+.active-block {
+    display: block !important;
+}
+.active-flex {
+    display: flex !important;
+}
+
+.display-mb-tb {
+  display: none;
+}
+
+/* -----------Keyframes---------- */
+@keyframes fadeIn {
+    from { opacity : 0}
+    to { opacity : 1}
+}
+@keyframes fadeOut {
+  from { opacity : 1}
+  to { opacity : 0}
+}
+
+@keyframes floatIn {
+  from { 
+    transform: translateY(15%);
+    opacity: 0;  
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;  
+  }
+}
+
+@keyframes floatOut {
+  from { 
+    transform: translateY(0);
+    opacity: 1;  
+  }
+  to { 
+    transform: translateY(15%);
+    opacity: 0;  
+  }
+}
+
+@keyframes floatInModal {
+  from { 
+    transform: translateX(-50%);
+    opacity: 0.5;  
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;  
+  }
+}
