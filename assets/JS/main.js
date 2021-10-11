@@ -176,9 +176,7 @@
 
         next.onclick = (e) => {
             e.stopPropagation();
-            console.log(date)
-            function handleNextBtn() {
-                let nextMonth;
+            let nextMonth;
             let year;
             let month;
             removeClassList($$('.day__item.active'),0,'isPicked');
@@ -207,7 +205,6 @@
             handleCalendarChange(new Date(`${year} ${nextMonth}`));
             counterPrev =0;
             counterNext++;
-            } 
         }
         prev.onclick = (e) => {
             e.stopPropagation();
