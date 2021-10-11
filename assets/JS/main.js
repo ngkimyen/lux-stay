@@ -85,13 +85,13 @@
 
         // -------PRESENT MONTH
         let presentMonth = date.toLocaleString('en-us', { month: 'long' });
-        let presentYear = date.toLocaleString('en-us', { year: 'numeric' });
+        let presentYear = date.getFullYear();
             // render heading present month
         presentMonthText.innerHTML = presentMonth;
         presentYearText.innerHTML = presentYear;
             // render days in present month
         let presentDate = new Date(`${presentYear} ${presentMonth}`);
-        let quantityDayInPresentMonth = daysInMonth(date.getMonth()+1, date.getFullYear())
+        let quantityDayInPresentMonth = daysInMonth(presentYear, date.getMonth()+1)
         renderDaysInMonth(calendarDayPresent, presentDate.getDay()-1, quantityDayInPresentMonth,presentDate.getDay()-1 + date.getDate());
         
         // ------NEXT MONTH
@@ -99,6 +99,7 @@
         let nextMonthNumber;
         let nextMonthNumberFromPresent = date.getMonth()+1;
         console.log('next month :', nextMonthNumberFromPresent)
+
         if (nextMonthNumberFromPresent <= 11) {    
             nextMonthNumber = nextMonthNumberFromPresent +1 ;
             nextYear = presentYear;
@@ -109,7 +110,7 @@
         }
             // render heading next month
         let nextDate = new Date (`${nextYear} ${nextMonthNumber}`);
-        let quantityDayInNextMonth = daysInMonth(nextDate.getMonth()+1, nextDate.getFullYear())
+        let quantityDayInNextMonth = daysInMonth(nextYear, nextMonthNumber)
         let nextMonth = nextDate.toLocaleString('en-us', { month: 'long' });
 
         nextYearText.innerHTML = nextYear;
@@ -175,7 +176,9 @@
 
         next.onclick = (e) => {
             e.stopPropagation();
-            let nextMonth;
+            console.log(date)
+            function handleNextBtn() {
+                let nextMonth;
             let year;
             let month;
             removeClassList($$('.day__item.active'),0,'isPicked');
@@ -203,7 +206,8 @@
             // console.log(new Date(`${year} ${nextMonth}`));
             handleCalendarChange(new Date(`${year} ${nextMonth}`));
             counterPrev =0;
-            return counterNext++;
+            counterNext++;
+            } 
         }
         prev.onclick = (e) => {
             e.stopPropagation();
@@ -211,6 +215,7 @@
             let year;
             let month;
             removeClassList($$('.day__item.active'),0,'isPicked');
+
             if (counterPrev === 0) {
                 month = date.getMonth();
             } else month = date.getMonth() - counterPrev;
@@ -231,10 +236,9 @@
             }
             // console.log(year)
             console.log(prevMonth)
-            console.log(counterPrev )
             handleCalendarChange(new Date(`${year} ${prevMonth}`));
             counterNext=0;
-            return counterPrev++;
+            counterPrev++;
         }
 
     }
@@ -370,7 +374,6 @@ function handleShowSlides (slider, numberDisplay) {
     // DISPLAY & HIDE MONEY UNIT
     const navMoney = $('modal .nav__money')
     const moneyOption = $('modal .money__option')
-    console.log(moneyOption)
 
     navMoney.onclick = (e) => {
         e.stopPropagation();
@@ -382,7 +385,7 @@ function handleShowSlides (slider, numberDisplay) {
 
 
 // responsive   
-const tablet = window.matchMedia("(min-width:740px) and (max-width: 1023px)");
+const tablet = window.matchMedia("(min-width:740px) and (max-width: 1366px)");
 const mobile = window.matchMedia("(max-width: 739px)");
 
 if (tablet.matches)   {

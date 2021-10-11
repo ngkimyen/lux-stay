@@ -75,6 +75,9 @@ b {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.hide-big-tb {
+  display: none;
+}
 /* ----------CSS------------- */
 .container {
     width: 100%;
@@ -98,6 +101,10 @@ input[type=number] {
 }
 
 .display-mb-tb {
+  display: none;
+}
+
+.display-tb {
   display: none;
 }
 

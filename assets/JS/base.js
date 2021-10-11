@@ -223,10 +223,6 @@ render.usage.forEach( (usage) => {
     `
 })
 
-
-
-
-
 // ---------------- BASE FUNCTION
 function display(element,displayName) {
     if (!displayName) {return element.classList.add('active')}
@@ -238,7 +234,7 @@ function hide(element,displayName) {
         else return element.classList.remove(`active-${displayName}`)
 }
 
-function daysInMonth (month, year) {
+function daysInMonth (year, month) {
     return new Date(year, month, 0).getDate();
 }
 

@@ -15,7 +15,6 @@ header {
     display: flex;
     height: 100%;
     align-items: center;
-    margin: 4px 0;
 }
 
 .header__link {
@@ -808,6 +807,9 @@ footer {
     color: #a3a0a0;
     font-size: 1.4rem;
 }
+.display-tb {
+    display: none;
+  }
 
 /* --------------------MODAL--------------------- */
 modal {

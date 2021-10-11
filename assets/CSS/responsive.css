@@ -17,6 +17,24 @@
         margin: 20px;
 
     }
+   
+}
+/* BIG TABLET && SMALL PC MONITOR */
+@media (max-width: 1336px){
+    .hide-big-tb {
+        display: none;
+    }
+    .display-big-tb {
+        display: block ;
+    }
+    .header__search {
+        width: 590px;
+    }
+   
+    .search__input-wrap {
+        flex: 1;
+        width: unset
+    }
     .mb-tb__nav {
         flex: 1;
         text-align: right;
@@ -33,17 +51,12 @@
         --main-section-margin: 20px;
         --suggestion-height: 238px;
     }
-    .header__search {
-        width: 590px;
-    }
-   
-    .search__input-wrap {
-        flex: 1;
-        width: unset
-    }
-
+  
     .calendar {
         left: -10px;
+    }
+    .outstanding__img-wrap {
+        height: 300px;
     }
 
 }
@@ -52,6 +65,7 @@
 @media (max-width: 739px){
     :root {
         --suggestion-height: 250px;
+        --main-section-margin: 20px;
     }
     .hide-mb {
         display: none;
@@ -64,7 +78,7 @@
         box-shadow: 0 5px 12px rgb(0 0 0 / 15%);
         margin-left: unset;
     }
-
+    
     .main-description {
         font-weight: 400;
         color: #3d3b3b;
@@ -100,5 +114,17 @@
     }
     .footer__content {
         font-size: 1.5rem;
+    }
+    .outstanding__img-wrap {
+        height: 200px;
+    }
+    .header__search {
+        padding-right: 0;
+    }
+    .main-heading {
+        padding-top: 10px;
+    }
+    .outstanding__name {
+        font-size: 2rem;
     }
 }
