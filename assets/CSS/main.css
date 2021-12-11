@@ -15,6 +15,7 @@ header {
     display: flex;
     height: 100%;
     align-items: center;
+    margin: auto;
 }
 
 .header__link {
